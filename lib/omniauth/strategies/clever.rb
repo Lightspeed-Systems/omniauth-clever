@@ -12,6 +12,8 @@ module OmniAuth
         :token_url     => 'https://api.getclever.com/oauth/token'
       }
 
+      option :provider_ignores_state, true
+
       def authorize_params
         super.tap do |params|
           params[:scope] = 'read_only'
